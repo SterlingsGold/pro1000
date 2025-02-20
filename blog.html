@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GreenCode Initiative - Blogg</title>
+    
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Koble til egen CSS-fil -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Optional: Inline CSS to style the arrow color/size -->
+
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="#home" class="logo">
+                    <i data-lucide="leafy-green"></i>
+                    Green Code
+                </a>
+            </div>
+            <ul>
+                <li><a href="index.html#home">Hjem</a></li>
+                <li><a href="index.html#about">Om</a></li>
+                <li><a href="index.html#toolkit">Verktøy</a></li>
+                <li><a href="index.html#case-study">Case Study</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+                <li><a href="discussion.html">Diskusjon</a></li>
+                <!-- Marker at vi er på Blog-siden -->
+                <li><a href="blog.html" style="; font-weight:600;">Blog</a></li>
+
+                <!-- GitHub-lenke -->
+                <li>
+                    <a href="https://github.com/YourRepoOrOrganization" target="_blank" aria-label="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO-SEKSJON -->
+    <section id="home" class="hero">
+        <div class="hero-content section-container">
+            <h1>GreenCode-initiativet – Blogg</h1>
+            <p>
+                Velkommen til vår bloggside! Her finner du dypdykk i temaer knyttet til grønn programmering, 
+                effektive algoritmer, optimalisering og miljøvennlig webdesign.
+            </p>
+            <p>
+                Strukturen og designet er identisk med forsiden, slik at du får en enhetlig opplevelse av 
+                GreenCode-initiativet – men her er fokus på lengre artikler og dybdeinnhold.
+            </p>
+            <!-- Removed the old button, replaced with a centered arrow-down link. -->
+            <div style="text-align:center; margin-top:1rem;">
+                <a href="#blog-detaljer" class="arrow-down" aria-label="Pil nedover">
+                    <i data-lucide="chevron-down" style="color: var(--primary-green);"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG-DETALJER-SEKSJON -->
+    <section id="blog-detaljer" class="about">
+        <div class="section-container">
+            <h2>Blogg: Grønn Programmering i Dybden</h2>
+            <p class="section-intro">
+                Her finner du mer detaljerte artikler om grønn programmering, 
+                med flere eksempler av grønn programmering fra Google, Netflix, Shopify og flere.
+            </p>
+
+            <!-- Tre kort for Google, Netflix, Shopify -->
+            <div class="card-container">
+                <!-- GOOGLE Card -->
+                <div class="card">
+                    <img 
+                        src="bilder/google.png" 
+                        alt="Google Icon" 
+                        style="width:60px; height:auto; margin-bottom:1rem;"
+                    />
+                    
+                    <p>
+                        Google optimaliserer datasentre med AI for å redusere energiforbruk 
+                        og kjøling, samt satser stort på fornybar energi.
+                    </p>
+                    <p>
+                        Et eksempel er “Carbon-Intelligent Computing” som flytter arbeidsoppgaver 
+                        til tidspunkter med grønnere strøm. På denne måten reduserer Google 
+                        karbonavtrykket betydelig uten å gå på kompromiss med ytelsen.
+                    </p>
+                    <a 
+                        href="https://sustainability.google/" 
+                        target="_blank" 
+                        class="tool-link"
+                    >
+                        Les mer hos Google
+                    </a>
+                </div>
+
+                <!-- NETFLIX Card -->
+                <div class="card">
+                    <img 
+                        src="bilder/netflix-.png" 
+                        alt="Netflix Icon" 
+                        style="width:60px; height:auto; margin-bottom:1rem;"
+                    />
+                    <h3>Netflix</h3>
+                    <p>
+                        Netflix benytter adaptiv strømming for å minimere båndbredde og energibruk, 
+                        og har brytt ned plattformen i mikrotjenester som kan skaleres effektivt.
+                    </p>
+                    <p>
+                        Ved å kombinere skybaserte løsninger med grundig optimalisering av koden, 
+                        sikrer Netflix en stabil, rask tjeneste for millioner av brukere hver dag 
+                        – med lavest mulig ressursforbruk.
+                    </p>
+                    <a 
+                        href="https://about.netflix.com/en/sustainability" 
+                        target="_blank" 
+                        class="tool-link"
+                    >
+                        Netflix Sustainability
+                    </a>
+                </div>
+
+                <!-- SHOPIFY Card -->
+                <div class="card">
+                    <img 
+                        src="images/shopify-icon.png" 
+                        alt="Shopify Icon" 
+                        style="width:60px; height:auto; margin-bottom:1rem;"
+                    />
+                    <h3>Shopify</h3>
+                    <p>
+                        Shopify prioriterer energieffektiv kode i sin populære e-handelsplattform, 
+                        der ressursforbruk måles nøye under hver build i deres CI/CD-pipeline.
+                    </p>
+                    <p>
+                        De deler også jevnlig innsikt om Ruby on Rails-optimalisering, caching-teknikker 
+                        og arkitekturvalg som reduserer karbonavtrykket – uten å ofre hastighet 
+                        for de mange nettbutikkene på plattformen.
+                    </p>
+                    <a 
+                        href="https://www.shopify.com/sustainability" 
+                        target="_blank" 
+                        class="tool-link"
+                    >
+                        Shopify Sustainability
+                    </a>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem;">
+                <strong>Hvorfor er dette viktig?</strong>
+                Disse selskapene viser at målrettet optimalisering av kode og infrastruktur 
+                kan gi store energi- og kostnadsbesparelser, samtidig som kundene får 
+                raskere tjenester.
+            </p>
+        </div>
+    </section>
+
+    
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Smooth scrolling for arrow-down
+        const arrowDownLink = document.querySelector('.arrow-down');
+        if (arrowDownLink) {
+          arrowDownLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Smoothly scroll to #blog-detaljer
+            document.querySelector('#blog-detaljer').scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
+        }
+      });
+    </script>
+</body>
+</html>

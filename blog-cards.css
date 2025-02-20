@@ -1,0 +1,37 @@
+/* blog-cards.css
+   Overrides or extends just the card styles on the Blog page.
+   Include this AFTER style.css in blog.html.
+*/
+
+/* Make the card container same as default, or slightly bigger spacing */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+/* Make the cards bigger, with more padding */
+.card {
+  width: auto;               /* Let the grid handle the width above (minmax(400px...)) */
+  padding: 3rem;            /* More padding for a bigger feel */
+  text-align: center;       /* Center images, text, button */
+}
+
+/* If you want the icons bigger, you can adjust here: */
+.card img {
+  max-width: 80px;  /* was 60px in style.css */
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* Slightly bigger text in the card paragraphs */
+.card p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem; /* adjust as desired */
+}
+
+/* Possibly a bigger button */
+.card .tool-link {
+  padding: 1rem 2rem;      /* bigger button area */
+  font-size: 1rem;         /* bigger text on button */
+}

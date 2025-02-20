@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenCode Initiative - Diskusjon</title>
+
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Koble til samme CSS som hovedsiden -->
+  <link rel="stylesheet" href="discussion.css" />
+</head>
+<body>
+  <!-- NAVIGATION (eksakt samme struktur som index.html) -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo-container">
+        <a href="index.html#home" class="logo">
+          <i data-lucide="leafy-green"></i>
+          Green Code
+        </a>
+      </div>
+      <ul>
+        <li><a href="index.html#home">Hjem</a></li>
+        <li><a href="index.html#about">Om</a></li>
+        <li><a href="index.html#toolkit">Verktøy</a></li>
+        <li><a href="index.html#case-study">Case Study</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+        <li><a href="discussion.html">Diskusjon</a></li>
+		<li><a href="blog.html">Blog</a></li>
+        <li>
+          <a 
+            href="https://github.com/YourRepoOrOrganization" 
+            target="_blank" 
+            aria-label="GitHub"
+          >
+            <i data-lucide="github"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- TOP-BANNER FOR DISKUSJON -->
+  <section class="hero" style="min-height: 40vh;">
+    <div class="hero-content section-container">
+      <h1>Diskusjon</h1>
+      <p>Del dine tanker, spørsmål og erfaringer med grønn programmering!</p>
+    </div>
+  </section>
+
+  <!-- FORM FOR NYE DISKUSJONSEMNER -->
+  <section class="section-container" style="padding-top: 2rem;">
+    <h2>Start et nytt diskusjonsemne</h2>
+    <p class="section-intro">
+      Opprett et nytt emne for å starte en samtale. Andre kan svare på innlegget ditt.
+    </p>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <form id="newTopicForm">
+        <div class="form-group">
+          <label for="newTopicTitle">Tittel på emne</label>
+          <input 
+            type="text" 
+            id="newTopicTitle" 
+            placeholder="F.eks. Beste tips for optimalisert kode?" 
+            required 
+          />
+        </div>
+        <div class="form-group">
+          <label for="newTopicAuthor">Ditt Navn</label>
+          <input 
+            type="text" 
+            id="newTopicAuthor" 
+            placeholder="Ditt navn eller kallenavn" 
+            required 
+          />
+        </div>
+        <div class="form-group">
+          <label for="newTopicContent">Innhold</label>
+          <textarea 
+            id="newTopicContent" 
+            rows="3" 
+            placeholder="Hva vil du diskutere? Skriv litt om saken ..." 
+            required
+          ></textarea>
+        </div>
+        <button type="submit">Opprett Emne</button>
+      </form>
+    </div>
+  </section>
+  
+  <script>
+window.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+});
+</script>
+
+
+  <!-- LISTE OVER DISKUSJONSEMNER -->
+  <section class="section-container" style="padding-top: 0;">
+    <h2>Aktive Diskusjoner</h2>
+    <p class="section-intro">
+      Bla gjennom eksisterende diskusjoner. Klikk på 
+      <em><strong>«Vis svar»</strong></em> for å lese og poste nye svar.
+    </p>
+
+    <!-- Viktig: Her skal alt dukke opp -->
+    <div id="topicsContainer"></div>
+  </section>
+
+  <!-- LEGG DISCUSSION.JS HELT TIL SLUTT (etter HTML-innhold) -->
+  <script src="discussion.js"></script>
+</body>
+</html>
