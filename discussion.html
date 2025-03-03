@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenCode Initiative - Diskusjon</title>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+
+  
+  <link rel="stylesheet" href="discussion.css" />
+</head>
+<body>
+ 
+  <nav>
+    <div class="nav-container">
+      <div class="logo-container">
+        <a href="index.html#home" class="logo">
+          <i data-lucide="leafy-green"></i>
+          Green Code
+        </a>
+      </div>
+      <ul>
+        <li><a href="index.html#home">Hjem</a></li>
+        <li><a href="index.html#about">Om</a></li>
+        <li><a href="index.html#toolkit">Verktøy</a></li>
+        <li><a href="case-study.html">Case Study</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+        <li><a href="discussion.html">Diskusjon</a></li>
+		<li><a href="blog.html">Blog</a></li>
+        <li>
+          <a 
+            href="https://github.com/SterlingsGold/pro1000" 
+            target="_blank" 
+            aria-label="GitHub"
+          >
+            <i data-lucide="github"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<section class="hero fade-in-on-scroll" style="min-height: 40vh;">
+  <div class="hero-content section-container">
+    <h2>Diskusjon</h2>
+    <p>Del dine tanker, spørsmål og erfaringer med grønn programmering!</p>
+  </div>
+</section>
+
+
+  <section class="section-container fade-in-on-scroll" style="padding-top: 2rem;">
+    <h2>Start et nytt diskusjonsemne</h2>
+    <p class="section-intro">
+      Opprett et nytt emne for å starte en samtale. Andre kan svare på innlegget ditt.
+    </p>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <form id="newTopicForm">
+        <div class="form-group">
+          <label for="newTopicTitle">Tittel på emne</label>
+          <input 
+            type="text" 
+            id="newTopicTitle" 
+            placeholder="F.eks. Beste tips for optimalisert kode?" 
+            required 
+          />
+        </div>
+        <div class="form-group">
+          <label for="newTopicAuthor">Ditt Navn</label>
+          <input 
+            type="text" 
+            id="newTopicAuthor" 
+            placeholder="Ditt navn eller kallenavn" 
+            required 
+          />
+        </div>
+        <div class="form-group">
+          <label for="newTopicContent">Innhold</label>
+          <textarea 
+            id="newTopicContent" 
+            rows="3" 
+            placeholder="Hva vil du diskutere? Skriv litt om saken ..." 
+            required
+          ></textarea>
+        </div>
+        <button type="submit">Opprett Emne</button>
+      </form>
+    </div>
+  </section>
+  
+  <script>
+window.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+});
+</script>
+
+
+ 
+  <section class="section-container fade-in-on-scroll" style="padding-top: 0;">
+    <h2>Aktive Diskusjoner</h2>
+    <p class="section-intro">
+      Bla gjennom eksisterende diskusjoner. Klikk på 
+      <em><strong>«Vis svar»</strong></em> for å lese og poste nye svar.
+    </p>
+
+   
+    <div id="topicsContainer"></div>
+  </section>
+
+ 
+  <script src="discussion.js"></script>
+    
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Select all elements that should fade in on scroll
+  const faders = document.querySelectorAll('.fade-in-on-scroll');
+  const options = { threshold: 0.1 };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;  // Skip if not in view
+      entry.target.classList.add('appear'); // Add the class to trigger CSS transition
+      observer.unobserve(entry.target);     // Stop observing once it has appeared
+    });
+  }, options);
+
+  faders.forEach(fader => {
+    observer.observe(fader);
+  });
+});
+</script>
+
+
+    
+</body>
+</html>
