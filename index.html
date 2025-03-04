@@ -15,6 +15,7 @@
   <!-- NAVIGATION -->
   <nav>
     <div class="nav-container">
+      <button class="menu-toggle">☰</button>
       <div class="logo-container">
         <a href="#home" class="logo">
           <i data-lucide="leafy-green"></i>
@@ -306,6 +307,21 @@
     // Initialize Lucide icons
     lucide.createIcons();
   </script>
-    
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const banner = document.querySelector(".top-banner");
+  
+      menuToggle.addEventListener("click", function () {
+          if (banner.style.display === "none" || banner.style.display === "") {
+              banner.style.display = "block";
+          } else {
+              banner.style.display = "none";
+          }
+      });
+  });
+  </script>
+  
+
 </body>
 </html>
