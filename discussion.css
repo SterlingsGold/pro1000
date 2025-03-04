@@ -266,25 +266,6 @@ button[type="submit"]:hover {
     margin-bottom: 1rem;
 }
 
-/* RESPONSIVT */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero {
-        padding-top: 6rem;
-    }
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    .section-container {
-        padding: 4rem 1.5rem;
-    }
-}
 
 /* Start hidden and shifted down */
 .fade-in-on-scroll {
@@ -299,36 +280,6 @@ button[type="submit"]:hover {
   transform: translateY(0);
 }
 
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .nav-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .container {
-        padding: 0.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-    nav {
-        padding: 0.5rem;
-    }
-    .container {
-        padding: 0.5rem;
-    }
-}
 
 :root {
     --primary-green: #00A67E;
@@ -371,12 +322,24 @@ nav {
     padding: 0 1rem;
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    background: none;
-    border: none;
+/* GENERAL LAYOUT */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -386,22 +349,6 @@ nav {
     }
     .container {
         padding: 0.5rem;
-    }
-    
-    /* Hide banner and add toggle */
-    .top-banner {
-        display: none;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-green);
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .menu-toggle {
-        display: block;
     }
 }
 
