@@ -363,18 +363,18 @@ p {
 }
 
 
-.nav-toggle-button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 15px;
-    background-color: var(--primary-green);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--primary-green); /* Adjust based on your theme */
 }
 
-.nav-toggle-button:hover {
-    background-color: var(--dark-green);
+.nav-toggle-button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
 }

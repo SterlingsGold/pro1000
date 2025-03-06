@@ -36,14 +36,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
   const navContainer = document.querySelector('.nav-container');
+  const logoContainer = document.querySelector('.logo-container');
   const toggleButton = document.createElement('button');
-  toggleButton.textContent = 'Menu';
+  toggleButton.innerHTML = '&#9776;'; // ☰ icon for menu
   toggleButton.classList.add('nav-toggle-button');
 
-  // Only add the button and collapse the nav on mobile screens
+  // Ensure logo remains visible
+  const navWrapper = document.createElement('div');
+  navWrapper.classList.add('nav-wrapper');
+  navWrapper.appendChild(logoContainer);
+  navWrapper.appendChild(toggleButton);
+  navContainer.parentNode.insertBefore(navWrapper, navContainer);
+
   function handleResize() {
       if (window.innerWidth <= 768) {
           navContainer.style.maxHeight = '0px';
@@ -57,13 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
                   navContainer.style.maxHeight = '0px';
               }
           });
-          document.body.insertBefore(toggleButton, navContainer);
       } else {
           navContainer.style.maxHeight = '';
           navContainer.style.overflow = '';
-          if (toggleButton.parentNode) {
-              toggleButton.parentNode.removeChild(toggleButton);
-          }
       }
   }
 
