@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
           navMenu.style.maxHeight = '0px';
           navMenu.style.overflow = 'hidden';
           navMenu.style.transition = 'max-height 0.5s ease-in-out';
+          toggleButton.style.display = 'block';
           
           toggleButton.addEventListener('click', function () {
               if (navMenu.style.maxHeight === '0px') {
@@ -73,9 +74,11 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
           navMenu.style.maxHeight = '';
           navMenu.style.overflow = '';
+          toggleButton.style.display = 'none';
       }
   }
 
   handleResize();
   window.addEventListener('resize', handleResize);
 });
+
