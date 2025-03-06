@@ -43,7 +43,14 @@ document.addEventListener('DOMContentLoaded', function () {
   toggleButton.innerHTML = '&#9776;'; // ☰ icon for menu
   toggleButton.classList.add('nav-toggle-button');
 
-  // Ensure logo remains visible
+  // Ensure logo remains visible by creating a wrapper for nav excluding logo
+  const navMenu = document.createElement('div');
+  navMenu.classList.add('nav-menu');
+  while (navContainer.firstChild) {
+      navMenu.appendChild(navContainer.firstChild);
+  }
+  navContainer.appendChild(navMenu);
+
   const navWrapper = document.createElement('div');
   navWrapper.classList.add('nav-wrapper');
   navWrapper.appendChild(logoContainer);
@@ -52,20 +59,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function handleResize() {
       if (window.innerWidth <= 768) {
-          navContainer.style.maxHeight = '0px';
-          navContainer.style.overflow = 'hidden';
-          navContainer.style.transition = 'max-height 0.5s ease-in-out';
+          navMenu.style.maxHeight = '0px';
+          navMenu.style.overflow = 'hidden';
+          navMenu.style.transition = 'max-height 0.5s ease-in-out';
           
           toggleButton.addEventListener('click', function () {
-              if (navContainer.style.maxHeight === '0px') {
-                  navContainer.style.maxHeight = '500px'; // Adjust height as needed
+              if (navMenu.style.maxHeight === '0px') {
+                  navMenu.style.maxHeight = '500px'; // Adjust height as needed
               } else {
-                  navContainer.style.maxHeight = '0px';
+                  navMenu.style.maxHeight = '0px';
               }
           });
       } else {
-          navContainer.style.maxHeight = '';
-          navContainer.style.overflow = '';
+          navMenu.style.maxHeight = '';
+          navMenu.style.overflow = '';
       }
   }
 

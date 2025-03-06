@@ -363,12 +363,14 @@ p {
 }
 
 
+
+
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: var(--primary-green); /* Adjust based on your theme */
+    background-color: var(--primary-green);
 }
 
 .nav-toggle-button {
@@ -377,4 +379,8 @@ p {
     border: none;
     cursor: pointer;
     color: white;
+}
+
+.nav-menu {
+    width: 100%;
 }
