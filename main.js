@@ -57,13 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
           navContainer.style.transition = 'max-height 0.5s ease-in-out';
           toggleButton.style.display = 'block';
           
-          toggleButton.addEventListener('click', function () {
+          toggleButton.onclick = function () {
               if (navContainer.style.maxHeight === '0px') {
                   navContainer.style.maxHeight = '500px';
               } else {
                   navContainer.style.maxHeight = '0px';
               }
-          });
+          };
       } else {
           navContainer.style.maxHeight = '';
           navContainer.style.overflow = '';

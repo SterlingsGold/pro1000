@@ -387,3 +387,9 @@ p {
         display: block;
     }
 }
+
+@media (min-width: 769px) {
+    .nav-toggle-button {
+        display: none; /* Hide toggle button on larger screens */
+    }
+}
