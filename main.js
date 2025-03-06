@@ -33,3 +33,38 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const heroSection = document.querySelector('.hero');
+  const toggleButton = document.createElement('button');
+  toggleButton.textContent = 'Toggle Banner';
+  toggleButton.classList.add('hero-toggle-button');
+
+  // Only add the button and collapse the banner on mobile screens
+  function handleResize() {
+      if (window.innerWidth <= 768) {
+          heroSection.style.maxHeight = '0px';
+          heroSection.style.overflow = 'hidden';
+          heroSection.style.transition = 'max-height 0.5s ease-in-out';
+          
+          toggleButton.addEventListener('click', function () {
+              if (heroSection.style.maxHeight === '0px') {
+                  heroSection.style.maxHeight = '100vh';
+              } else {
+                  heroSection.style.maxHeight = '0px';
+              }
+          });
+          document.body.insertBefore(toggleButton, heroSection);
+      } else {
+          heroSection.style.maxHeight = '';
+          heroSection.style.overflow = '';
+          if (toggleButton.parentNode) {
+              toggleButton.parentNode.removeChild(toggleButton);
+          }
+      }
+  }
+
+  handleResize();
+  window.addEventListener('resize', handleResize);
+});
