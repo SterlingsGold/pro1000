@@ -43,37 +43,30 @@ document.addEventListener('DOMContentLoaded', function () {
   toggleButton.innerHTML = '&#9776;'; // ☰ icon for menu
   toggleButton.classList.add('nav-toggle-button');
 
-  // Ensure logo remains visible by creating a wrapper for nav excluding logo
-  const navMenu = document.createElement('div');
-  navMenu.classList.add('nav-menu');
-  while (navContainer.firstChild) {
-      navMenu.appendChild(navContainer.firstChild);
-  }
-  navContainer.appendChild(navMenu);
-
+  // Ensure logo remains visible
   const navWrapper = document.createElement('div');
   navWrapper.classList.add('nav-wrapper');
+  navContainer.parentNode.insertBefore(navWrapper, navContainer);
   navWrapper.appendChild(logoContainer);
   navWrapper.appendChild(toggleButton);
-  navContainer.parentNode.insertBefore(navWrapper, navContainer);
 
   function handleResize() {
       if (window.innerWidth <= 768) {
-          navMenu.style.maxHeight = '0px';
-          navMenu.style.overflow = 'hidden';
-          navMenu.style.transition = 'max-height 0.5s ease-in-out';
+          navContainer.style.maxHeight = '0px';
+          navContainer.style.overflow = 'hidden';
+          navContainer.style.transition = 'max-height 0.5s ease-in-out';
           toggleButton.style.display = 'block';
           
           toggleButton.addEventListener('click', function () {
-              if (navMenu.style.maxHeight === '0px') {
-                  navMenu.style.maxHeight = '500px'; // Adjust height as needed
+              if (navContainer.style.maxHeight === '0px') {
+                  navContainer.style.maxHeight = '500px';
               } else {
-                  navMenu.style.maxHeight = '0px';
+                  navContainer.style.maxHeight = '0px';
               }
           });
       } else {
-          navMenu.style.maxHeight = '';
-          navMenu.style.overflow = '';
+          navContainer.style.maxHeight = '';
+          navContainer.style.overflow = '';
           toggleButton.style.display = 'none';
       }
   }
@@ -81,4 +74,3 @@ document.addEventListener('DOMContentLoaded', function () {
   handleResize();
   window.addEventListener('resize', handleResize);
 });
-

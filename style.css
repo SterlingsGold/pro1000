@@ -379,14 +379,11 @@ p {
     border: none;
     cursor: pointer;
     color: white;
+    display: none; /* Default hidden, shown only on mobile */
 }
 
-.nav-menu {
-    width: 100%;
-}
-
-@media (min-width: 769px) {
+@media (max-width: 768px) {
     .nav-toggle-button {
-        display: none; /* Hide toggle button on larger screens */
+        display: block;
     }
 }
