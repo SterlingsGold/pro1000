@@ -42,17 +42,18 @@ document.addEventListener('DOMContentLoaded', function () {
   toggleButton.innerHTML = '&#9776;'; // ☰ icon for menu
   toggleButton.classList.add('nav-toggle-button');
 
-  let navWrapper = document.createElement('div');
-  navWrapper.classList.add('nav-wrapper');
+  let navWrapper = null;
 
   function handleResize() {
       if (window.innerWidth <= 768) {
-          if (!document.body.contains(navWrapper)) {
+          if (!navWrapper) {
+              navWrapper = document.createElement('div');
+              navWrapper.classList.add('nav-wrapper');
               navWrapper.appendChild(logoContainer);
               navWrapper.appendChild(toggleButton);
               navContainer.parentNode.insertBefore(navWrapper, navContainer);
           }
-          
+
           navContainer.style.maxHeight = '0px';
           navContainer.style.overflow = 'hidden';
           navContainer.style.transition = 'max-height 0.5s ease-in-out';
@@ -69,9 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
           navContainer.style.maxHeight = '';
           navContainer.style.overflow = '';
           toggleButton.style.display = 'none';
-          
-          if (document.body.contains(navWrapper)) {
-              navWrapper.remove(); // Remove navWrapper on desktop
+
+          if (navWrapper) {
+              navWrapper.remove();
+              navWrapper = null;
           }
       }
   }
