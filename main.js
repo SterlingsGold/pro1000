@@ -35,7 +35,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
   const navContainer = document.querySelector('.nav-container');
   const logoContainer = document.querySelector('.logo-container');
@@ -43,20 +42,22 @@ document.addEventListener('DOMContentLoaded', function () {
   toggleButton.innerHTML = '&#9776;'; // ☰ icon for menu
   toggleButton.classList.add('nav-toggle-button');
 
-  // Ensure logo remains visible
-  const navWrapper = document.createElement('div');
+  let navWrapper = document.createElement('div');
   navWrapper.classList.add('nav-wrapper');
-  navContainer.parentNode.insertBefore(navWrapper, navContainer);
-  navWrapper.appendChild(logoContainer);
-  navWrapper.appendChild(toggleButton);
 
   function handleResize() {
       if (window.innerWidth <= 768) {
+          if (!document.body.contains(navWrapper)) {
+              navWrapper.appendChild(logoContainer);
+              navWrapper.appendChild(toggleButton);
+              navContainer.parentNode.insertBefore(navWrapper, navContainer);
+          }
+          
           navContainer.style.maxHeight = '0px';
           navContainer.style.overflow = 'hidden';
           navContainer.style.transition = 'max-height 0.5s ease-in-out';
           toggleButton.style.display = 'block';
-          
+
           toggleButton.onclick = function () {
               if (navContainer.style.maxHeight === '0px') {
                   navContainer.style.maxHeight = '500px';
@@ -68,6 +69,10 @@ document.addEventListener('DOMContentLoaded', function () {
           navContainer.style.maxHeight = '';
           navContainer.style.overflow = '';
           toggleButton.style.display = 'none';
+          
+          if (document.body.contains(navWrapper)) {
+              navWrapper.remove(); // Remove navWrapper on desktop
+          }
       }
   }
 

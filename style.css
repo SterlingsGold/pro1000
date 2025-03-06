@@ -365,13 +365,6 @@ p {
 
 
 
-.nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: var(--primary-green);
-}
 
 .nav-toggle-button {
     font-size: 24px;
