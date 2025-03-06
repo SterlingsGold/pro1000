@@ -363,8 +363,7 @@ p {
 }
 
 
-
-.hero-toggle-button {
+.nav-toggle-button {
     display: block;
     margin: 10px auto;
     padding: 10px 15px;
@@ -376,6 +375,6 @@ p {
     font-size: 16px;
 }
 
-.hero-toggle-button:hover {
+.nav-toggle-button:hover {
     background-color: var(--dark-green);
 }

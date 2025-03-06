@@ -35,30 +35,32 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const heroSection = document.querySelector('.hero');
-  const toggleButton = document.createElement('button');
-  toggleButton.textContent = 'Toggle Banner';
-  toggleButton.classList.add('hero-toggle-button');
 
-  // Only add the button and collapse the banner on mobile screens
+
+document.addEventListener('DOMContentLoaded', function () {
+  const navContainer = document.querySelector('.nav-container');
+  const toggleButton = document.createElement('button');
+  toggleButton.textContent = 'Menu';
+  toggleButton.classList.add('nav-toggle-button');
+
+  // Only add the button and collapse the nav on mobile screens
   function handleResize() {
       if (window.innerWidth <= 768) {
-          heroSection.style.maxHeight = '0px';
-          heroSection.style.overflow = 'hidden';
-          heroSection.style.transition = 'max-height 0.5s ease-in-out';
+          navContainer.style.maxHeight = '0px';
+          navContainer.style.overflow = 'hidden';
+          navContainer.style.transition = 'max-height 0.5s ease-in-out';
           
           toggleButton.addEventListener('click', function () {
-              if (heroSection.style.maxHeight === '0px') {
-                  heroSection.style.maxHeight = '100vh';
+              if (navContainer.style.maxHeight === '0px') {
+                  navContainer.style.maxHeight = '500px'; // Adjust height as needed
               } else {
-                  heroSection.style.maxHeight = '0px';
+                  navContainer.style.maxHeight = '0px';
               }
           });
-          document.body.insertBefore(toggleButton, heroSection);
+          document.body.insertBefore(toggleButton, navContainer);
       } else {
-          heroSection.style.maxHeight = '';
-          heroSection.style.overflow = '';
+          navContainer.style.maxHeight = '';
+          navContainer.style.overflow = '';
           if (toggleButton.parentNode) {
               toggleButton.parentNode.removeChild(toggleButton);
           }
