@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenCode Initiative Hovedside</title>
+
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Main style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <div class="logo-container">
+      <a href="index.html" class="logo">
+        <i data-lucide="leafy-green"></i>
+        Green Code
+      </a>
+    </div>
+    <!-- Desktop Navigasjon:  -->
+    <ul class="desktop-nav">
+      <li><a href="#home">Hjem</a></li>
+      <li><a href="#about">Om</a></li>
+      <li><a href="#toolkit">Verktøy</a></li>
+      <li><a href="case-study.html">Case Study</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+      <li><a href="discussion.html">Diskusjon</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li>
+        <a href="https://github.com/SterlingsGold/pro1000" target="_blank" aria-label="GitHub">
+          <i data-lucide="github"></i>
+        </a>
+      </li>
+    </ul>
+    <!-- Mobile Hamburger Knapp (Blir gjemt på desktop) -->
+    <button id="menu-toggle" class="menu-toggle">
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+  <!-- Mobile Dropdown Meny (Gjemt på desktop) -->
+  <ul id="nav-links">
+    <li><a href="index.html#home">Hjem</a></li>
+      <li><a href="index.html#about">Om</a></li>
+      <li><a href="index.html#toolkit">Verktøy</a></li>
+      <li><a href="case-study.html">Case Study</a></li>
+      <li><a href="index.html#contact">Kontakt</a></li>
+      <li><a href="discussion.html">Diskusjon</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li>
+      <a href="https://github.com/SterlingsGold/pro1000" target="_blank" aria-label="GitHub">
+        <i data-lucide="github"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+  <!-- HERO SEKSJON -->
+  <section id="home" class="hero">
+    <div class="hero-content section-container fade-in-on-scroll">
+      <h1>GreenCode-initiativet</h1>
+      <p>
+        Velkommen til GreenCode! Vi jobber for en bærekraftig fremtid gjennom miljøvennlig 
+        programvareutvikling. Vår misjon er å fremme bevissthet rundt grønn koding, 
+        og hjelpe utviklere med å skape programvare som er energieffektiv og miljøvennlig.
+      </p>
+      <p>
+        Ved å fokusere på smarte algoritmer, optimal kode og bærekraftig infrastruktur 
+        kan vi redusere karbonavtrykket i IT-sektoren og samtidig forbedre programvarens 
+        ytelse og levetid.
+      </p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn">Les om Grønn Koding</a>
+        <a href="#toolkit" class="btn">Se Verktøyene</a>
+        <a href="case-study.html" class="btn">Utforsk Case Study</a>
+      </div>
+    </div>
+    <!-- Wave divider nederst på hero -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path fill="#E6F7F2" fill-opacity="1"
+          d="M0,0L60,10C120,20,240,40,360,53.3C480,67,600,73,720,74.7C840,77,960,75,1080,66.7C1200,60,1320,40,1380,30L1440,20L1440,100L1380,100C1320,100,1200,100,1080,100C960,100,840,100,720,100C600,100,480,100,360,100C240,100,120,100,60,100L0,100Z">
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- HVORFOR BRY SEG SEKSJON -->
+  <section style="background: #E6F7F2; padding: 4rem 2rem; text-align: center;" class="fade-in-on-scroll">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h2 style="margin-bottom: 1rem; color: var(--black);">Hvorfor Bry Seg?</h2>
+      <p style="margin-bottom: 2rem; color: var(--text-gray);">
+        IT-sektoren står for en stadig voksende andel av verdens energiforbruk.
+        Små justeringer i koden vår kan faktisk gi store utslag.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+        <!-- Eksempel stat 1 -->
+        <div class="stat-box">
+          <img src="bilder/energy.png" alt="Energy Icon">
+          <h3>Redusert Energiforbruk</h3>
+          <p>Optimal kode minimerer CPU-bruk og nedskalerer infrastrukturbehov.</p>
+        </div>
+        <!-- Eksempel stat 2 -->
+        <div class="stat-box">
+          <img src="bilder/CO2.png" alt="CO2 Icon">
+          <h3>Lavere CO2-avtrykk</h3>
+          <p>Bærekraftig programmering kan hjelpe med å kutte utslipp fra datasentre.</p>
+        </div>
+        <!-- Eksempel stat 3 -->
+        <div class="stat-box">
+          <img src="bilder/Money.png" alt="Money Icon">
+          <h3>Kostnadsbesparelser</h3>
+          <p>Mindre energibruk gir lavere driftskostnader, bra for bunnlinjen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SEKSJON -->
+  <section id="about" class="about fade-in-on-scroll">
+    <div class="section-container">
+      <h2>Om Grønn Programmering</h2>
+      <p class="section-intro">
+        Grønn programmering handler om å utvikle programvare på en måte som 
+        minimerer miljøpåvirkningen. Her finner du et utvalg av «blogg-overskrifter» 
+        som belyser hvor viktig og spennende dette fagfeltet kan være.
+      </p>
+
+      <div class="card-container">
+        <!-- Kort 1 with Image -->
+        <div class="card hover-lift">
+          <img src="bilder/algo.png" alt="Effektive Algoritmer" class="card-icon">
+          <h3>Effektive Algoritmer</h3>
+          <p>
+            Oppdag hvordan velstrukturerte algoritmer kan redusere antall 
+            operasjoner og energiforbruk. Alt fra mindre kodelinjer til 
+            mer effektive datastrukturer.
+          </p>
+        </div>
+        <!-- Kort 2 with Image -->
+        <div class="card hover-lift">
+          <img src="bilder/Kode.png" alt="Optimalisert Kode" class="card-icon">
+          <h3>Optimalisert Kode</h3>
+          <p>
+            Lær om teknikker for å skrive kode som krever mindre 
+            minne, raskere prosessering og mindre strømforbruk i datasentre.
+          </p>
+        </div>
+        <!-- Kort 3 with Image -->
+        <div class="card hover-lift">
+          <img src="bilder/Webdesign.png" alt="Bærekraftig Webdesign" class="card-icon">
+          <h3>Bærekraftig Webdesign</h3>
+          <p>
+            Reduser filstørrelser, last færre ressurser og bruk 
+            klimasmarte farger for å gjøre nettsider mer effektive 
+            og brukervennlige.
+          </p>
+        </div>
+      </div>
+      <p style="margin-top: 2rem;">
+        <strong>Hvorfor er dette viktig?</strong> IT-sektoren står for en 
+        stadig voksende andel av verdens energiforbruk. Ved å fokusere på 
+        bærekraftige løsninger i planlegging, implementering og drift av 
+        programvare kan vi gjøre en reell forskjell.
+      </p>
+    </div>
+  </section>
+
+  <!-- TOOLKIT  -->
+  <section id="toolkit" class="toolkit fade-in-on-scroll">
+    <div class="section-container">
+      <h2>Bærekraftig Verktøysett</h2>
+      <p class="section-intro">
+        Et knippe verktøy, rammeverk og sjekklister som gjør det enklere for utviklere 
+        å komme i gang med grønn programmering.
+      </p>
+      <div class="card-container">
+        <div class="card hover-lift">
+          <h3>Green Web Foundation</h3>
+          <p>
+            Bransjestandardverktøy for måling og optimalisering av 
+            nettsteders karbonfotavtrykk. Få tilgang til analyser 
+            og rapporter om din nettsides miljøpåvirkning.
+          </p>
+          <a 
+            href="https://www.thegreenwebfoundation.org" 
+            target="_blank" 
+            class="tool-link"
+          >
+            Utforsk Verktøyet
+          </a>
+        </div>
+        <div class="card hover-lift">
+          <h3>CodeCarbon</h3>
+          <p>
+            Avanserte verktøy for sporing og reduksjon av karbonutslipp 
+            fra programvare i sanntid. Integrer enkelt i prosjektene dine 
+            for umiddelbar miljøovervåking.
+          </p>
+          <a 
+            href="https://codecarbon.io" 
+            target="_blank" 
+            class="tool-link"
+          >
+            Start Måling
+          </a>
+        </div>
+        <div class="card hover-lift">
+          <h3>Checklister og Guidelines</h3>
+          <p>
+            Fra Docker-optimalisering til serverløs arkitektur: 
+            opprett din egen tjekkliste for å sikre at applikasjoner 
+            bruker minst mulig ressurser.
+          </p>
+          <a 
+            href="https://sustainablewebdesign.org" 
+            target="_blank" 
+            class="tool-link"
+          >
+            Se Eksempel
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY (LINKER TIL case-study.html) -->
+  <section class="fade-in-on-scroll" style="padding: 4rem 2rem; text-align:center;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h2 style="color: var(--black); margin-bottom:1rem;">Se Eksempler I Praksis</h2>
+      <p style="color: var(--text-dark); margin-bottom: 2rem;">
+        Vil du se hvordan selskaper som Google, Apple, eller Microsoft kutter energibruk med grønn koding? 
+        Utforsk en dybdegående case study, husk også å sjekk ut blog siden for mer!
+      </p>
+      <a href="case-study.html" class="tool-link" style="padding:1rem 2rem; font-size:1rem;">
+        Gå til Case Study
+      </a>
+    </div>
+  </section>
+
+  <!-- KONTAKT SEKSJON -->
+  <section id="contact" class="contact fade-in-on-scroll">
+    <div class="section-container">
+      <h2>Kontakt</h2>
+      <p class="section-intro">
+        Har du spørsmål, tilbakemeldinger eller ønsker du å bidra? 
+        Fyll ut skjemaet under, så hører du fra oss snart!
+      </p>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Navn</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">E-post</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Melding</label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Melding</button>
+      </form>
+
+      <div class="faq">
+        <h2>Ofte Stilte Spørsmål</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">Hva er grønn programmering?</div>
+          <div class="faq-answer">
+            Grønn programmering er utvikling av programvare 
+            med fokus på energieffektivitet og minimal miljøpåvirkning. 
+            Dette innebærer alt fra optimaliserte algoritmer til 
+            renere infrastruktur.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Hvordan kan jeg starte med bærekraftig programmering?</div>
+          <div class="faq-answer">
+            Begynn med å kartlegge energiforbruket ditt. Bruk 
+            verktøyene vi foreslår (for eksempel CodeCarbon) og 
+            identifiser områder med høy belastning. Deretter kan 
+            du implementere justeringer for å redusere avtrykket.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Hvilke verktøy trenger jeg?</div>
+          <div class="faq-answer">
+            Green Web Foundation for nettside-analyser, CodeCarbon for 
+            kode- og ressursmåling, samt generelle retningslinjer for 
+            grønn webdesign. Disse gir et godt grunnlag for å tenke 
+            mer miljøvennlig.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+  <script>
+    const faders = document.querySelectorAll('.fade-in-on-scroll');
+    const appearOptions = {
+      threshold: 0.1
+    };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fadeSection => {
+      appearOnScroll.observe(fadeSection);
+    });
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+    
+</body>
+</html>

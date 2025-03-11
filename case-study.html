@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenCode – Tre Store Case Studies</title>
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+
+  
+  <link rel="stylesheet" href="style.css">
+
+  
+  <style>
+      
+      body {
+  padding-top: 60px; 
+}
+    /* Fade-in on scroll */
+    .fade-in-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-in-on-scroll.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Wave dividers */
+    .wave-divider {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Parallax hero stil */
+    .parallax-hero {
+      height: 60vh;
+      background: center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+       
+    }
+    .parallax-hero .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .parallax-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+        color: var(--primary-green);
+    }
+    .parallax-hero p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* Generisk brand seksjon container */
+    .brand-section {
+      padding: 4rem 1rem;
+      background: #FFF;
+      position: relative;
+      text-align: center;
+    }
+    .brand-section h2 {
+      margin-bottom: 2rem;
+      color: var(--primary-green);
+    }
+    .brand-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .brand-layout img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .brand-info {
+      text-align: left;
+      color: var(--text-dark);
+    }
+    .brand-info h3 {
+      color: var(--primary-green);
+      margin-bottom: 0.5rem;
+    }
+    .brand-info p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+   
+    .brand-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .stat-box {
+      flex: 1 1 180px;
+      background: #F7F7F7;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .stat-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    .stat-box h4 {
+      color: var(--primary-green);
+      margin-bottom: 0.5rem;
+    }
+    .stat-box p {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Quote box */
+    .quote-box {
+      margin-top: 2rem;
+      background: linear-gradient(135deg, #E6F7F2 0%, #FFF 100%);
+      border-left: 6px solid var(--primary-green);
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      position: relative;
+      font-style: italic;
+      color: var(--text-dark);
+    }
+    .quote-box::before {
+      content: "“";
+      font-size: 3rem;
+      color: var(--primary-green);
+      position: absolute;
+      top: -1.5rem;
+      left: 1rem;
+    }
+    .quote-author {
+      text-align: right;
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-weight: bold;
+      color: var(--primary-green);
+    }
+
+    /* Referanser box */
+    .references {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 1rem;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+    .references h4 {
+      color: var(--primary-green);
+      margin-bottom: 0.5rem;
+    }
+    .references ul {
+      list-style: disc inside;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+    .references a {
+      color: var(--primary-green);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .references a:hover {
+      color: var(--dark-green);
+      text-decoration: underline;
+    }
+
+    /* Footer styling */
+    .case-footer {
+      padding: 2rem;
+      background: #F7F7F7;
+      text-align: center;
+    }
+
+    /* Responsiv */
+    @media (max-width: 768px) {
+      .brand-layout {
+        grid-template-columns: 1fr;
+      }
+      .brand-layout img {
+        height: auto;
+      }
+    }
+      
+      /* ----- Desktop navigasjon ----- */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem; 
+  position: relative;
+}
+
+.logo-container {
+  
+}
+
+.desktop-nav {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+
+.menu-toggle,
+#nav-links {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  /* Gjem desktop navigasjon on mobile */
+  .desktop-nav {
+    display: none;
+    
+  }
+  
+
+   .nav-container {
+    position: relative; 
+  }
+  
+  
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none; /* Minimal look */
+    border: none;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 4px 6px;
+    margin-left: auto;
+    margin-top: -50px;
+    z-index: 1100;
+    cursor: pointer;
+  }
+  
+ 
+ #nav-links {
+    position: fixed;
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px); 
+    background: rgba(255, 255, 255, 0.98); 
+    display: none; 
+    flex-direction: column;
+    z-index: 1050;
+    padding-top: 2rem; 
+}
+
+  
+  
+  #nav-links.active {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+  
+  
+  #nav-links li {
+    /* Bare hvis me vil adde borders */
+  }
+  
+  #nav-links li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  
+  #nav-links li:last-child {
+    border-bottom: none;
+  }
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+</head>
+<body>
+
+  
+  <nav>
+  <div class="nav-container">
+    <div class="logo-container">
+      <a href="index.html" class="logo">
+        <i data-lucide="leafy-green"></i>
+        Green Code
+      </a>
+    </div>
+    <!-- Desktop Navigasjon:  -->
+    <ul class="desktop-nav">
+      <li><a href="index.html#home">Hjem</a></li>
+      <li><a href="index.html#about">Om</a></li>
+      <li><a href="index.html#toolkit">Verktøy</a></li>
+      <li><a href="case-study.html">Case Study</a></li>
+      <li><a href="index.html#contact">Kontakt</a></li>
+      <li><a href="discussion.html">Diskusjon</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li>
+        <a href="https://github.com/SterlingsGold/pro1000" target="_blank" aria-label="GitHub">
+          <i data-lucide="github"></i>
+        </a>
+      </li>
+    </ul>
+    <!-- Mobile Hamburger Knapp (Blir gjemt på desktop) -->
+    <button id="menu-toggle" class="menu-toggle">
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+  <!-- Mobile Dropdown Meny (Gjemt på desktop) -->
+  <ul id="nav-links">
+    <li><a href="index.html#home">Hjem</a></li>
+      <li><a href="index.html#about">Om</a></li>
+      <li><a href="index.html#toolkit">Verktøy</a></li>
+      <li><a href="case-study.html">Case Study</a></li>
+      <li><a href="index.html#contact">Kontakt</a></li>
+      <li><a href="discussion.html">Diskusjon</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li>
+      <a href="https://github.com/SterlingsGold/pro1000" target="_blank" aria-label="GitHub">
+        <i data-lucide="github"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+ 
+  <section class="parallax-hero fade-in-on-scroll" style="background-image: url('bilder/sustain4.jpg');">
+    <div class="hero-content">
+      <h1>Case Studies: Apple, Google & Microsoft</h1>
+      <p>
+        Tre teknologigiganter, tre forskjellige tilnærminger – 
+        alle på vei mot grønn koding og bærekraftig infrastruktur. 
+        Oppdag resultatene deres her.
+      </p>
+    </div>
+  </section>
+
+  
+  <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path fill="#FFFFFF" fill-opacity="1"
+      d="M0,0L60,10C120,20,240,40,360,53.3C480,67,600,73,720,74.7C840,77,960,75,1080,66.7C1200,60,1320,40,1380,30L1440,20L1440,100L1380,100C1320,100,1200,100,1080,100C960,100,840,100,720,100C600,100,480,100,360,100C240,100,120,100,60,100L0,100Z">
+    </path>
+  </svg>
+
+  <!-- APPLE SEKSJON -->
+  <section class="brand-section fade-in-on-scroll">
+    <h2>Apple’s Green Coding Journey</h2>
+    <div class="brand-layout">
+      <img src="bilder/apple.jpg" alt="Apple approach" />
+      <div class="brand-info">
+        <h3>Bakgrunn & Implementering</h3>
+        <p>
+          Apple identifiserte energisluk i iOS, macOS og iCloud-datasentre. 
+          Med verktøy som CodeCarbon målte de karbonavtrykket live, 
+          og ved å gå over til fornybar energi i datasentre senket de utslipp.
+        </p>
+        <p>
+          Kodeoptimalisering fjernet unødige prosesser, 
+          slik at CPU-belastningen falt betydelig.
+        </p>
+        <div class="brand-stats">
+          <div class="stat-box">
+            <h4>30% Mindre CO₂</h4>
+            <p>Energieffektive datasentre & grønn strøm.</p>
+          </div>
+          <div class="stat-box">
+            <h4>20% Lavere CPU</h4>
+            <p>Oppdaterte iOS & macOS kjerneprosesser.</p>
+          </div>
+          <div class="stat-box">
+            <h4>2030-Mål</h4>
+            <p>Full karbonnøytralitet for produksjon & drift.</p>
+          </div>
+        </div>
+        <div class="quote-box">
+          “Grønn koding betyr at vi leverer bedre opplevelser 
+           og viser ansvar for miljøet – en vinn-vinn-situasjon.”
+          <div class="quote-author">– Tim Cook, CEO i Apple</div>
+        </div>
+        <div class="references">
+          <h4>Referanse</h4>
+          <ul>
+            <li><a href="https://www.apple.com/environment/" target="_blank">Apple Environment Page</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path fill="#fff" fill-opacity="1"
+      d="M0,0L60,10C120,20,240,40,360,53.3C480,67,600,73,720,74.7C840,77,960,75,1080,66.7C1200,60,1320,40,1380,30L1440,20L1440,100L1380,100C1320,100,1200,100,1080,100C960,100,840,100,720,100C600,100,480,100,360,100C240,100,120,100,60,100L0,100Z">
+    </path>
+  </svg>
+
+  
+  <section class="brand-section fade-in-on-scroll" style="background:#FFF;">
+    <h2>Google’s Green Cloud Revolution</h2>
+    <div class="brand-layout">
+      <img src="bilder/google2.png" alt="Google approach" />
+      <div class="brand-info">
+        <h3>Bakgrunn & Implementering</h3>
+        <p>
+          Google bruker AI (DeepMind) for å optimalisere kjøling 
+          og CPU i datasentre, noe som har kuttet energibehovet med opptil 40%.
+          Google Cloud satser på 24/7 fornybar energi, 
+          og jobber kontinuerlig med grønn koding.
+        </p>
+        <p>
+          Gjennom strømlinjeforming av serverarkitekturen 
+          og flytting til mer bærekraftige datasentre 
+          har Google også redusert driftskostnader.
+        </p>
+        <div class="brand-stats">
+          <div class="stat-box">
+            <h4>40% Mindre Strøm</h4>
+            <p>AI-basert kjøling i datasentre.</p>
+          </div>
+          <div class="stat-box">
+            <h4>24/7 Grønn Energi</h4>
+            <p>Google Cloud med helårs fornybar strøm.</p>
+          </div>
+          <div class="stat-box">
+            <h4>AI Optimalisering</h4>
+            <p>DeepMind justerer ressursbruk i sanntid.</p>
+          </div>
+        </div>
+        <div class="quote-box">
+          “Med bærekraftige datasentre og grønn kode 
+           reduserer vi både utslipp og kostnader.”
+          <div class="quote-author">– Sundar Pichai, CEO i Google</div>
+        </div>
+        <div class="references">
+          <h4>Referanser</h4>
+          <ul>
+            <li><a href="https://cloud.google.com/sustainability" target="_blank">Google Cloud Sustainability</a></li>
+            <li><a href="https://deepmind.com/blog/article/deepmind-ai-reduces-google-data-centre-cooling-bill-40" target="_blank">DeepMind AI & Cooling</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path fill="#F7F7F7" fill-opacity="1"
+      d="M0,0L60,10C120,20,240,40,360,53.3C480,67,600,73,720,74.7C840,77,960,75,1080,66.7C1200,60,1320,40,1380,30L1440,20L1440,100L1380,100C1320,100,1200,100,1080,100C960,100,840,100,720,100C600,100,480,100,360,100C240,100,120,100,60,100L0,100Z">
+    </path>
+  </svg>
+
+  
+  <section class="brand-section fade-in-on-scroll">
+    <h2>Microsoft’s Carbon-Negative Ambitions</h2>
+    <div class="brand-layout">
+      <img src="bilder/microsoft2.jpg" alt="Microsoft approach" />
+      <div class="brand-info">
+        <h3>Bakgrunn & Implementering</h3>
+        <p>
+          Microsoft planlegger å bli karbonnegative innen 2030.
+          Ved å optimalisere kode i Azure, Windows og Office, 
+          samt investere i fornybar energi og karbonfangst, 
+          senker de energiforbruk og utslipp.
+        </p>
+        <p>
+          De bruker også CodeCarbon-lignende verktøy for 
+          å spore karbonutslipp i utviklingsprosessen og 
+          gjør løpende forbedringer for å nå bærekraftsmålene.
+        </p>
+        <div class="brand-stats">
+          <div class="stat-box">
+            <h4>Karbonnegativ 2030</h4>
+            <p>Microsofts offisielle bærekraftsmål.</p>
+          </div>
+          <div class="stat-box">
+            <h4>Min. CPU i Azure</h4>
+            <p>Ytelsesoptimalisering reduserer serverbehov.</p>
+          </div>
+          <div class="stat-box">
+            <h4>AI & Karbonfangst</h4>
+            <p>Nyeste teknologier for å senke CO₂-utslipp globalt.</p>
+          </div>
+        </div>
+        <div class="quote-box">
+          “Å bli karbonnegative er både en forretningsmulighet 
+           og et miljøansvar. Grønn koding er kjernen i 
+           fremtidens utvikling.”
+          <div class="quote-author">– Satya Nadella, CEO i Microsoft</div>
+        </div>
+        <div class="references">
+          <h4>Referanser</h4>
+          <ul>
+            <li><a href="https://www.microsoft.com/en-us/corporate-responsibility/sustainability" target="_blank">Microsoft Sustainability Portal</a></li>
+            <li><a href="https://www.microsoft.com/en-us/ai/responsible-ai" target="_blank">AI for Environmental Sustainability</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path fill="#fff" fill-opacity="1"
+      d="M0,0L60,10C120,20,240,40,360,53.3C480,67,600,73,720,74.7C840,77,960,75,1080,66.7C1200,60,1320,40,1380,30L1440,20L1440,100L1380,100C1320,100,1200,100,1080,100C960,100,840,100,720,100C600,100,480,100,360,100C240,100,120,100,60,100L0,100Z">
+    </path>
+  </svg>
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      lucide.createIcons();
+
+    
+      const faders = document.querySelectorAll('.fade-in-on-scroll');
+      const appearOptions = { threshold: 0.1 };
+
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if(!entry.isIntersecting) return;
+          entry.target.classList.add('appear');
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+      faders.forEach(el => {
+        appearOnScroll.observe(el);
+      });
+    });
+  </script>
+    
+    <script>document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Lucide icons
+  lucide.createIcons();
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+ 
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle('active');
+  });
+
+  
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+
+  
+  document.addEventListener('click', (e) => {
+    const navContainer = document.querySelector('.nav-container');
+    if (!navContainer.contains(e.target)) {
+      navLinks.classList.remove('active');
+    }
+  });
+});
+</script>
+</body>
+</html>
