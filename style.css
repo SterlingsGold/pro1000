@@ -466,4 +466,7 @@ p {
   }
 }
 
+html {
+  scroll-padding-top: 60px; /* Når du trykker på seksjon, f.eks kontakt om og sånt, så juster dette for kor mye teksten skal vises */
+}
 
